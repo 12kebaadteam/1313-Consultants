@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { SERVICES, type ServiceSlug } from '../App'
 
 interface HomePageProps {
   onContactOpen: () => void
-  onServiceClick: (service: ServiceSlug) => void
 }
 
 function useReveal() {
@@ -32,13 +30,12 @@ const testimonials = [
 
 const badges = ['GDPR Compliant', 'FCA Registered', 'Making Tax Digital Ready']
 
-export default function HomePage({ onContactOpen, onServiceClick }: HomePageProps) {
-  const r1 = useReveal(); const r2 = useReveal(); const r3 = useReveal()
+export default function HomePage({ onContactOpen }: HomePageProps) {
+  const r3 = useReveal()
   const r4 = useReveal(); const r5 = useReveal(); const r6 = useReveal()
-  const servicesRef = useRef<HTMLElement>(null)
 
-  const scrollToServices = () => {
-    servicesRef.current?.scrollIntoView({ behavior: 'smooth' })
+  const scrollToWhyUs = () => {
+    r3.ref.current?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -100,7 +97,7 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
           <div className="animate-fade-up anim-delay-4" style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
             <button onClick={onContactOpen} className="btn-primary">Book Free Consultation</button>
             <button 
-              onClick={scrollToServices}
+              onClick={scrollToWhyUs}
               style={{
                 padding: '14px 32px', border: '1.5px solid rgba(255,255,255,0.25)',
                 background: 'none', color: 'white', fontSize: 11,
@@ -110,7 +107,7 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
               }}
               onMouseOver={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)'; }}
               onMouseOut={e => { e.currentTarget.style.background = 'none'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; }}
-            >View Our Services</button>
+            >Learn More</button>
           </div>
 
           <div className="animate-fade-up anim-delay-5" style={{ marginTop: 64, display: 'flex', flexWrap: 'wrap', gap: 28 }}>
@@ -129,106 +126,13 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
         </div>
       </section>
 
-      {/* ── STATS ── */}
-      <div ref={r1.ref} style={{
-        padding: '48px 32px', background: 'white',
-        borderBottom: '1px solid var(--cream-mid)',
-        opacity: r1.visible ? 1 : 0, transform: r1.visible ? 'translateY(0)' : 'translateY(12px)',
-        transition: 'all 0.6s ease',
-      }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 8 }}>
-          {stats.map(({ value, label }) => (
-            <div key={label} style={{ textAlign: 'center', padding: '16px', borderRight: '1px solid var(--cream-mid)' }}>
-              <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 32, color: 'var(--sapphire)', fontWeight: 600, lineHeight: 1.1 }}>{value}</div>
-              <div style={{ fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-light)', marginTop: 6 }}>{label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* ── SERVICES ── */}
-      <section ref={servicesRef} style={{
-        padding: '80px 32px', background: 'var(--cream)',
-        opacity: r2.visible ? 1 : 0, transition: 'all 0.8s ease',
-        transform: r2.visible ? 'translateY(0)' : 'translateY(24px)',
-      }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 40 }}>
-            <div style={{ fontSize: 11, letterSpacing: '0.35em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 12, fontWeight: 500 }}>What We Do</div>
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--navy)', marginBottom: 16 }}>Comprehensive Financial Services</h2>
-            <p style={{ color: 'var(--text-light)', fontSize: 12, letterSpacing: '0.05em' }}>Select a service below to explore how we can support your growth</p>
-          </div>
-          
-          <div className="services-grid" style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(3, 1fr)', // Force 3 columns for 6 items (3x2)
-            gap: 2,
-            background: 'rgba(201,168,76,0.02)',
-          }}>
-            {SERVICES.map((svc, i) => (
-              <button key={svc.id} onClick={() => onServiceClick(svc)} style={{
-                background: 'white', border: 'none', cursor: 'pointer',
-                padding: '40px 32px', textAlign: 'left',
-                transition: 'all 0.3s ease',
-                position: 'relative', overflow: 'hidden',
-              }}
-              onMouseOver={e => {
-                e.currentTarget.style.background = 'var(--navy)'
-                e.currentTarget.querySelectorAll('.svc-title').forEach(el => (el as HTMLElement).style.color = 'white')
-                e.currentTarget.querySelectorAll('.svc-desc').forEach(el => (el as HTMLElement).style.color = 'rgba(255,255,255,0.55)')
-                e.currentTarget.querySelectorAll('.svc-icon').forEach(el => (el as HTMLElement).style.background = 'rgba(201,168,76,0.2)')
-                e.currentTarget.querySelectorAll('.svc-arrow').forEach(el => (el as HTMLElement).style.opacity = '1')
-              }}
-              onMouseOut={e => {
-                e.currentTarget.style.background = 'white'
-                e.currentTarget.querySelectorAll('.svc-title').forEach(el => (el as HTMLElement).style.color = 'var(--navy)')
-                e.currentTarget.querySelectorAll('.svc-desc').forEach(el => (el as HTMLElement).style.color = 'var(--text-mid)')
-                e.currentTarget.querySelectorAll('.svc-icon').forEach(el => (el as HTMLElement).style.background = 'var(--cream-mid)')
-                e.currentTarget.querySelectorAll('.svc-arrow').forEach(el => (el as HTMLElement).style.opacity = '0')
-              }}
-              >
-                <div className="svc-icon" style={{
-                  width: 52, height: 52, background: 'var(--cream-mid)',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 24, marginBottom: 20,
-                  transition: 'all 0.3s',
-                }}>{svc.icon}</div>
-                <div className="svc-title" style={{ fontFamily: 'Playfair Display, serif', fontSize: 18, color: 'var(--navy)', marginBottom: 10, transition: 'color 0.3s' }}>{svc.title}</div>
-                <p className="svc-desc" style={{ fontSize: 13, color: 'var(--text-mid)', lineHeight: 1.7, marginBottom: 20, transition: 'color 0.3s' }}>{svc.tagline}</p>
-                <div className="svc-arrow" style={{
-                  display: 'flex', alignItems: 'center', gap: 8,
-                  color: 'var(--gold)', fontSize: 11, letterSpacing: '0.15em',
-                  textTransform: 'uppercase', fontWeight: 500,
-                  opacity: 0, transition: 'opacity 0.3s',
-                }}>
-                  Learn More <span style={{ fontSize: 16 }}>→</span>
-                </div>
-                <div style={{
-                  position: 'absolute', bottom: 0, left: 0, right: 0, height: 3,
-                  background: 'linear-gradient(90deg, var(--gold), var(--gold-light))',
-                }} />
-              </button>
-            ))}
-          </div>
-          {/* Fallback for mobile/tablet via CSS class in index.css */}
-          <style>{`
-            @media (max-width: 991px) {
-              .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
-            }
-            @media (max-width: 640px) {
-              .services-grid { grid-template-columns: 1fr !important; }
-            }
-          `}</style>
-        </div>
-      </section>
-
       {/* ── WHY CHOOSE US ── */}
       <section ref={r3.ref} style={{
         padding: '80px 32px', background: 'white',
         opacity: r3.visible ? 1 : 0, transition: 'all 0.8s ease',
         transform: r3.visible ? 'translateY(0)' : 'translateY(24px)',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 64, alignItems: 'center' }}>
+        <div id="why-us" style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 64, alignItems: 'center' }}>
           <div>
             <div style={{ fontSize: 11, letterSpacing: '0.35em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 12, fontWeight: 500 }}>Why Choose Us</div>
             <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(26px, 3.5vw, 36px)', color: 'var(--navy)', marginBottom: 20 }}>The 1313 Difference</h2>

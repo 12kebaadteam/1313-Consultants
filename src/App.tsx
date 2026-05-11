@@ -243,15 +243,15 @@ export default function App() {
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'home': return <HomePage onContactOpen={() => setContactOpen(true)} onServiceClick={openService} />
+      case 'home': return <HomePage onContactOpen={() => setContactOpen(true)} />
       case 'about': return <AboutPage onContactOpen={() => setContactOpen(true)} />
       case 'admin': return <AdminPage />
       case 'terms': return <TermsPage />
       case 'privacy': return <PrivacyPage />
       case 'service': return activeService
         ? <ServiceDetailPage service={activeService} onContactOpen={() => setContactOpen(true)} onBack={() => setCurrentPage('home')} />
-        : <HomePage onContactOpen={() => setContactOpen(true)} onServiceClick={openService} />
-      default: return <HomePage onContactOpen={() => setContactOpen(true)} onServiceClick={openService} />
+        : <HomePage onContactOpen={() => setContactOpen(true)} />
+      default: return <HomePage onContactOpen={() => setContactOpen(true)} />
     }
   }
 
