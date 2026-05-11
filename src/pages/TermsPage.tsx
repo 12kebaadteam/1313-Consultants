@@ -3,7 +3,7 @@ export default function TermsPage() {
     ['1. Acceptance of Terms', 'By accessing and using the services provided by 1313 Consultants, you accept and agree to be bound by the terms and conditions set forth herein. These terms apply to all visitors, users, and clients of our services.'],
     ['2. Services', '1313 Consultants provides professional accounting consultancy services in the United Kingdom. Our services include tax advisory, financial planning, business consultancy, bookkeeping, payroll services, and compliance support.'],
     ['3. Professional Advice', 'Information provided on this website is for general guidance only and does not constitute professional financial or legal advice. Always consult with a qualified professional before making financial decisions.'],
-    ['4. Confidentiality', 'We maintain strict confidentiality in accordance with ICAEW standards and GDPR regulations. All client information is handled with the utmost discretion and security.'],
+    ['4. Confidentiality', 'We maintain strict confidentiality in accordance with Accounting Standards standards and GDPR regulations. All client information is handled with the utmost discretion and security.'],
     ['5. Limitation of Liability', '1313 Consultants shall not be liable for any indirect, incidental, or consequential damages arising from the use of our services.'],
     ['6. Governing Law', 'These terms are governed by and construed in accordance with the laws of England and Wales. Any disputes shall be subject to the exclusive jurisdiction of the courts of England and Wales.'],
   ]

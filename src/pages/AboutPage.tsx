@@ -14,10 +14,7 @@ function useReveal() {
 }
 
 const team = [
-  { name: 'Jagjit Singh', role: 'Founder', bio: 'With a vision for accessible, high-calibre accounting, Jagjit founded 1313 Consultants to bring expert-level financial advice to UK businesses of all sizes.', initials: 'JS', accent: '#c9a84c' },
   { name: 'Satwant Singh', role: 'Chief Executive Officer', bio: 'Leading the firm\'s strategic growth, Satwant brings deep expertise in business development, client relations, and scaling professional services firms.', initials: 'SS', accent: '#1a3a6b' },
-  { name: 'Thomas Bradley', role: 'Senior Accountant & Compliance Lead', bio: 'Specialist in HMRC compliance, VAT advisory, and payroll management. Thomas ensures every client meets their obligations without the stress.', initials: 'TB', accent: '#2d6a4f' },
-  { name: 'Jessica Liu', role: 'Client Services Director', bio: 'Dedicated to ensuring every client receives bespoke, attentive service. Jessica is the first point of contact for client success at 1313.', initials: 'JL', accent: '#7b3f00' },
 ]
 
 const values = [
@@ -70,7 +67,7 @@ export default function AboutPage({ onContactOpen }: AboutPageProps) {
                 Founded in 2009 in the heart of London, 1313 Consultants was built on a simple belief: every business and individual deserves access to the same calibre of financial expertise.
               </p>
               <p style={{ color: 'var(--text-mid)', fontSize: 15, lineHeight: 1.85 }}>
-                Our founder Jagjit Singh set out to create a boutique consultancy where clients are known by name, not account number. Where strategy comes before paperwork, and results are measured in real outcomes.
+                We set out to create a boutique consultancy where clients are known by name, not account number. Where strategy comes before paperwork, and results are measured in real outcomes.
               </p>
               <p style={{ color: 'var(--text-mid)', fontSize: 15, lineHeight: 1.85 }}>
                 Today, under the leadership of CEO Satwant Singh, we support over 1,200 clients — from entrepreneurs and freelancers to mid-market companies and property investors across the UK.
@@ -79,10 +76,10 @@ export default function AboutPage({ onContactOpen }: AboutPageProps) {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
-              { year: '2009', event: 'Founded in London', desc: 'Jagjit Singh establishes 1313 Consultants.' },
-              { year: '2013', event: 'ICAEW Accreditation', desc: 'Full membership and recognition achieved.' },
-              { year: '2018', event: '4 Service Divisions', desc: 'Expanded into tax, payroll, advisory & compliance.' },
-              { year: '2024', event: '1,200+ Clients', desc: 'Serving businesses across the United Kingdom.' },
+              { year: '2009', event: 'Founded in London', desc: '1313 Consultants is established to bring clarity to complex finances.' },
+              { year: '2013', event: 'Strategic Expansion', desc: 'The firm expands its core advisory and tax services.' },
+              { year: '2018', event: '4 Service Divisions', desc: 'Formal divisions for tax, payroll, advisory & compliance are created.' },
+              { year: '2024', event: '1,200+ Clients', desc: 'Serving businesses and individuals across the United Kingdom.' },
             ].map(({ year, event, desc }) => (
               <div key={year} style={{ background: 'white', padding: '28px 24px', border: '1px solid rgba(201,168,76,0.1)' }}>
                 <div style={{ fontFamily: 'Playfair Display, serif', color: 'var(--gold)', fontSize: 28, fontWeight: 600, marginBottom: 8 }}>{year}</div>
@@ -102,25 +99,27 @@ export default function AboutPage({ onContactOpen }: AboutPageProps) {
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 64 }}>
             <div style={{ fontSize: 11, letterSpacing: '0.35em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 12, fontWeight: 500 }}>Leadership</div>
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--navy)' }}>The People Behind 1313</h2>
+            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--navy)' }}>The Person Behind 1313</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 24 }}>
-            {team.map(({ name, role, bio, initials, accent }) => (
-              <div key={name} className="glass-card" style={{ padding: '36px 28px', transition: 'transform 0.3s, box-shadow 0.3s' }}
-              onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 20px 60px rgba(10,22,40,0.12)'; }}
-              onMouseOut={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(10,22,40,0.08)'; }}
-              >
-                <div style={{
-                  width: 60, height: 60, background: `linear-gradient(135deg, ${accent}, ${accent}aa)`,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: 'Playfair Display, serif', fontSize: 20, color: 'white', fontWeight: 600,
-                  marginBottom: 20,
-                }}>{initials}</div>
-                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 18, color: 'var(--navy)', marginBottom: 4 }}>{name}</div>
-                <div style={{ fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: accent, marginBottom: 16, fontWeight: 500 }}>{role}</div>
-                <p style={{ color: 'var(--text-mid)', fontSize: 13, lineHeight: 1.7 }}>{bio}</p>
-              </div>
-            ))}
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div style={{ width: '100%', maxWidth: 440 }}>
+              {team.map(({ name, role, bio, initials, accent }) => (
+                <div key={name} className="glass-card" style={{ padding: '36px 28px', transition: 'transform 0.3s, box-shadow 0.3s' }}
+                onMouseOver={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.boxShadow = '0 20px 60px rgba(10,22,40,0.12)'; }}
+                onMouseOut={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(10,22,40,0.08)'; }}
+                >
+                  <div style={{
+                    width: 60, height: 60, background: `linear-gradient(135deg, ${accent}, ${accent}aa)`,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontFamily: 'Playfair Display, serif', fontSize: 20, color: 'white', fontWeight: 600,
+                    marginBottom: 20,
+                  }}>{initials}</div>
+                  <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 18, color: 'var(--navy)', marginBottom: 4 }}>{name}</div>
+                  <div style={{ fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: accent, marginBottom: 16, fontWeight: 500 }}>{role}</div>
+                  <p style={{ color: 'var(--text-mid)', fontSize: 13, lineHeight: 1.7 }}>{bio}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

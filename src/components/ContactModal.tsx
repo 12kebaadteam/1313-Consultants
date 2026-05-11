@@ -154,7 +154,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
                     style={{ ...inputStyle, background: 'var(--cream-mid)' }}>
                     <option value="">Select a service</option>
                     {['Tax Advisory', 'Bookkeeping & Accounts', 'Payroll Services',
-                      'Business Consultancy', 'HMRC Compliance', 'Financial Planning', 'Other'
+                      'Business Consultancy', 'Tax office Compliance', 'Financial Planning', 'Other'
                     ].map(s => <option key={s}>{s}</option>)}
                   </select>
                 </div>

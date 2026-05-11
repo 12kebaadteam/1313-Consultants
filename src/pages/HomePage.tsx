@@ -30,11 +30,16 @@ const testimonials = [
   { name: 'Michael Davies', role: 'Director, Davies Properties', quote: 'Impeccable service. The team handles everything seamlessly — complex property tax structuring to day-to-day accounts management.' },
 ]
 
-const badges = ['ICAEW Member', 'GDPR Compliant', 'FCA Registered', 'Making Tax Digital Ready']
+const badges = ['GDPR Compliant', 'FCA Registered', 'Making Tax Digital Ready']
 
 export default function HomePage({ onContactOpen, onServiceClick }: HomePageProps) {
   const r1 = useReveal(); const r2 = useReveal(); const r3 = useReveal()
   const r4 = useReveal(); const r5 = useReveal(); const r6 = useReveal()
+  const servicesRef = useRef<HTMLElement>(null)
+
+  const scrollToServices = () => {
+    servicesRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <div>
@@ -74,7 +79,7 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
           }}>
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--gold)', display: 'inline-block', boxShadow: '0 0 8px var(--gold)' }} />
             <span style={{ color: 'var(--gold-light)', fontSize: 11, letterSpacing: '0.3em', textTransform: 'uppercase', fontWeight: 500 }}>
-              ICAEW Registered · London, UK
+              London, United Kingdom
             </span>
           </div>
 
@@ -98,15 +103,17 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
 
           <div className="animate-fade-up anim-delay-4" style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
             <button onClick={onContactOpen} className="btn-primary">Book Free Consultation</button>
-            <button style={{
-              padding: '14px 32px', border: '1.5px solid rgba(255,255,255,0.25)',
-              background: 'none', color: 'white', fontSize: 11,
-              letterSpacing: '0.15em', textTransform: 'uppercase', cursor: 'pointer',
-              transition: 'all 0.3s',
-              fontFamily: 'DM Sans, sans-serif', fontWeight: 500,
-            }}
-            onMouseOver={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)'; }}
-            onMouseOut={e => { e.currentTarget.style.background = 'none'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; }}
+            <button 
+              onClick={scrollToServices}
+              style={{
+                padding: '14px 32px', border: '1.5px solid rgba(255,255,255,0.25)',
+                background: 'none', color: 'white', fontSize: 11,
+                letterSpacing: '0.15em', textTransform: 'uppercase', cursor: 'pointer',
+                transition: 'all 0.3s',
+                fontFamily: 'DM Sans, sans-serif', fontWeight: 500,
+              }}
+              onMouseOver={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)'; }}
+              onMouseOut={e => { e.currentTarget.style.background = 'none'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; }}
             >View Our Services</button>
           </div>
 
@@ -146,7 +153,7 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
       </div>
 
       {/* ── SERVICES ── */}
-      <section ref={r2.ref} style={{
+      <section ref={servicesRef} style={{
         padding: '96px 32px', background: 'var(--cream)',
         opacity: r2.visible ? 1 : 0, transition: 'all 0.8s ease',
         transform: r2.visible ? 'translateY(0)' : 'translateY(32px)',
@@ -227,7 +234,7 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
               ['Dedicated Senior Consultants', 'Your account is managed by qualified professionals, not delegated to juniors.'],
               ['Proactive Tax Planning', 'We identify savings opportunities before deadlines — not after them.'],
               ['Fixed Monthly Fees', 'No surprise invoices. Transparent pricing that scales with your business.'],
-              ['ICAEW Regulated', 'Fully regulated and insured, operating to the highest professional standards.'],
+              ['Regulated & Insured', 'Fully regulated and insured, operating to the highest professional standards.'],
               ['24-Hour Response Guarantee', 'Every client query answered within one business day, without exception.'],
             ].map(([title, desc]) => (
               <div key={title} style={{ display: 'flex', gap: 16, marginBottom: 20 }}>
@@ -314,8 +321,7 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
           <div style={{ fontSize: 10, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: 32 }}>Regulated & Accredited</div>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 40 }}>
             {[
-              { name: 'ICAEW', desc: 'Chartered Accountants' },
-              { name: 'HMRC', desc: 'Tax Agent Registered' },
+              { name: 'Tax Office', desc: 'Agent Registered' },
               { name: 'ICO', desc: 'Data Protection' },
               { name: 'FCA', desc: 'Financial Conduct' },
               { name: 'AAT', desc: 'Accounting Technicians' },

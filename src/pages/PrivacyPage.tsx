@@ -6,7 +6,7 @@ export default function PrivacyPage() {
     ['4. Data Retention', 'We retain personal data for as long as necessary to fulfil the purposes for which it was collected, including for the purposes of satisfying any legal, regulatory, tax, accounting or reporting requirements.'],
     ['5. Your Rights', 'Under UK GDPR, you have the right to: access your personal data, rectify inaccurate data, erase your data, restrict processing, data portability, and object to processing. Contact us to exercise these rights.'],
     ['6. Cookies', 'Our website uses essential cookies to ensure proper functioning. We also use analytics cookies to understand how visitors use our site. You can control cookie preferences through your browser settings.'],
-    ['7. Contact Us', 'For any privacy-related queries, please contact our Data Protection Officer at privacy@1313consultants.co.uk.'],
+    ['7. Contact Us', 'For any privacy-related queries, please contact our Data Protection Officer at privacy@1313consultants.com.'],
   ]
   return (
     <div style={{ background: 'var(--cream)', minHeight: '100vh' }}>

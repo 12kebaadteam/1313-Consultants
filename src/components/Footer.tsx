@@ -23,13 +23,13 @@ export default function Footer({ setCurrentPage }: FooterProps) {
               }}>
                 <span style={{ color: 'white', fontSize: 13, fontWeight: 700, fontFamily: 'Playfair Display, serif' }}>13</span>
               </div>
-              <div>
-                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 18, color: 'white', fontWeight: 600 }}>1313 Consultants</div>
-                <div style={{ fontSize: 9, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold)' }}>Accounting Consultancy</div>
+              <div style={{ textAlign: 'left' }}>
+                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 22, color: 'white', fontWeight: 600, lineHeight: 1.1 }}>1313 Consultants</div>
+                <div style={{ fontSize: 10, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500 }}>Accounting Consultancy</div>
               </div>
             </div>
             <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 13, lineHeight: 1.8, maxWidth: 300 }}>
-              Premium accounting consultancy for businesses and individuals across the United Kingdom. ICAEW members. GDPR compliant.
+              Premium accounting consultancy for businesses and individuals across the United Kingdom. GDPR compliant.
             </p>
             <div style={{ marginTop: 20, display: 'flex', gap: 10 }}>
               {['LI', 'TW', 'FB'].map(s => (
@@ -84,7 +84,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
             <div style={{ marginTop: 24 }}>
               <div style={{ fontSize: 10, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 12, fontWeight: 500 }}>Contact</div>
               <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 13, lineHeight: 2 }}>
-                info@1313consultants.co.uk<br />
+                info@1313consultants.com<br />
                 +44 (0) 20 0000 1313<br />
                 London, United Kingdom
               </p>
