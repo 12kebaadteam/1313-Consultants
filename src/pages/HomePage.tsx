@@ -166,7 +166,12 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
               <span style={{ fontSize: 10, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--text-light)' }}>Click a service to learn more</span>
             </div>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 2 }}>
+          <div className="services-grid" style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+            gap: 2,
+            background: 'rgba(201,168,76,0.1)'
+          }}>
             {SERVICES.map((svc, i) => (
               <button key={svc.id} onClick={() => onServiceClick(svc)} style={{
                 background: 'white', border: 'none', cursor: 'pointer',
@@ -223,7 +228,7 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
         opacity: r3.visible ? 1 : 0, transition: 'all 0.8s ease',
         transform: r3.visible ? 'translateY(0)' : 'translateY(32px)',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 80, alignItems: 'center' }}>
           <div>
             <div style={{ fontSize: 11, letterSpacing: '0.35em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 12, fontWeight: 500 }}>Why Choose Us</div>
             <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(26px, 3.5vw, 40px)', color: 'var(--navy)', marginBottom: 20 }}>The 1313 Difference</h2>
@@ -297,7 +302,7 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
             <div style={{ fontSize: 11, letterSpacing: '0.35em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 12, fontWeight: 500 }}>Testimonials</div>
             <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--navy)' }}>What Our Clients Say</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 24 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24 }}>
             {testimonials.map(({ name, role, quote }) => (
               <div key={name} className="glass-card" style={{ padding: 36, position: 'relative' }}>
                 <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 48, color: 'var(--gold)', opacity: 0.3, lineHeight: 1, marginBottom: 16, marginTop: -8 }}>"</div>
