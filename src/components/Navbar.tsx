@@ -35,18 +35,7 @@ export default function Navbar({ currentPage, setCurrentPage, onContactOpen }: N
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 32px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         {/* Logo */}
         <button onClick={() => setCurrentPage('home')} style={{ display: 'flex', alignItems: 'center', gap: 12, background: 'none', border: 'none', cursor: 'pointer' }}>
-          <div style={{
-            width: 48, height: 48,
-            background: 'linear-gradient(135deg, var(--navy), var(--sapphire))',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            position: 'relative',
-          }}>
-            <span style={{ color: 'var(--gold)', fontSize: 14, fontWeight: 700, letterSpacing: 1, fontFamily: 'Playfair Display, serif' }}>13</span>
-            <div style={{
-              position: 'absolute', inset: 0, border: '1px solid rgba(201,168,76,0.4)',
-              transform: 'scale(0.85)',
-            }} />
-          </div>
+          <img src="/logo.png" alt="1313 Consultants" style={{ height: 48, width: 48, objectFit: 'contain' }} />
           <div style={{ textAlign: 'left' }}>
             <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 24, color: 'var(--navy)', fontWeight: 600, lineHeight: 1.1 }}>1313</div>
             <div style={{ fontSize: 11, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 500 }}>Consultants</div>

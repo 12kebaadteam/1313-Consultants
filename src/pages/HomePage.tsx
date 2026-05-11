@@ -45,7 +45,7 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
     <div>
       {/* ── HERO ── */}
       <section style={{
-        minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative',
+        minHeight: '90vh', display: 'flex', alignItems: 'center', position: 'relative',
         background: 'linear-gradient(135deg, var(--navy) 0%, var(--sapphire) 50%, #2a5298 100%)',
         overflow: 'hidden',
       }}>
@@ -69,7 +69,7 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
           background: 'radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%)',
         }} />
 
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '120px 32px 80px', position: 'relative', zIndex: 1 }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '140px 32px 100px', position: 'relative', zIndex: 1 }}>
           {/* Pill badge */}
           <div className="animate-fade-up anim-delay-1" style={{
             display: 'inline-flex', alignItems: 'center', gap: 10,
@@ -154,12 +154,12 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
 
       {/* ── SERVICES ── */}
       <section ref={servicesRef} style={{
-        padding: '96px 32px', background: 'var(--cream)',
+        padding: '80px 32px', background: 'var(--cream)',
         opacity: r2.visible ? 1 : 0, transition: 'all 0.8s ease',
         transform: r2.visible ? 'translateY(0)' : 'translateY(32px)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 64 }}>
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <div style={{ fontSize: 11, letterSpacing: '0.35em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 12, fontWeight: 500 }}>What We Do</div>
             <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 4vw, 44px)', color: 'var(--navy)', marginBottom: 16 }}>Comprehensive Financial Services</h2>
             <div className="ornament" style={{ maxWidth: 300, margin: '0 auto' }}>
@@ -170,7 +170,8 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
             display: 'grid', 
             gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
             gap: 2,
-            background: 'rgba(201,168,76,0.1)'
+            background: 'rgba(201,168,76,0.05)',
+            boxShadow: '0 20px 50px rgba(10,22,40,0.05)'
           }}>
             {SERVICES.map((svc, i) => (
               <button key={svc.id} onClick={() => onServiceClick(svc)} style={{
@@ -319,19 +320,25 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
 
       {/* ── ACCREDITATIONS ── */}
       <section ref={r5.ref} style={{
-        padding: '56px 32px', background: 'white', borderTop: '1px solid var(--cream-mid)',
+        padding: '64px 32px', background: 'white', borderTop: '1px solid var(--cream-mid)',
         opacity: r5.visible ? 1 : 0, transition: 'all 0.8s ease',
       }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ fontSize: 10, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: 32 }}>Regulated & Accredited</div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 40 }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ fontSize: 10, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: 40 }}>Regulated & Accredited</div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 32 }}>
             {[
-              { name: 'Tax Office', desc: 'Agent Registered' },
-              { name: 'ICO', desc: 'Data Protection' },
-              { name: 'FCA', desc: 'Financial Conduct' },
-              { name: 'AAT', desc: 'Accounting Technicians' },
-            ].map(({ name, desc }) => (
-              <div key={name} style={{ textAlign: 'center' }}>
+              { name: 'Tax Office', desc: 'Agent Registered', icon: '🏛' },
+              { name: 'ICO', desc: 'Data Protection', icon: '🛡' },
+              { name: 'FCA', desc: 'Financial Conduct', icon: '✅' },
+              { name: 'AAT', desc: 'Accounting Technicians', icon: '🎓' },
+            ].map(({ name, desc, icon }) => (
+              <div key={name} style={{ 
+                textAlign: 'center', padding: '24px', 
+                border: '1px solid var(--cream-mid)',
+                background: 'var(--cream)',
+                transition: 'transform 0.3s ease'
+              }}>
+                <div style={{ fontSize: 24, marginBottom: 12 }}>{icon}</div>
                 <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, color: 'var(--sapphire)', fontWeight: 600, letterSpacing: '0.1em' }}>{name}</div>
                 <div style={{ fontSize: 10, color: 'var(--text-light)', letterSpacing: '0.15em', marginTop: 4, textTransform: 'uppercase' }}>{desc}</div>
               </div>
