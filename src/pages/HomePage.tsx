@@ -45,32 +45,28 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
     <div>
       {/* ── HERO ── */}
       <section style={{
-        minHeight: '90vh', display: 'flex', alignItems: 'center', position: 'relative',
+        minHeight: '85vh', display: 'flex', alignItems: 'center', position: 'relative',
         background: 'linear-gradient(135deg, var(--navy) 0%, var(--sapphire) 50%, #2a5298 100%)',
         overflow: 'hidden',
       }}>
-        {/* Background pattern */}
         <div style={{
           position: 'absolute', inset: 0, opacity: 0.04,
           backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)',
           backgroundSize: '48px 48px',
         }} />
-        {/* Large decorative number */}
         <div style={{
           position: 'absolute', right: -60, top: '50%', transform: 'translateY(-50%)',
           fontSize: 'clamp(200px, 30vw, 400px)', fontFamily: 'Playfair Display, serif',
           fontWeight: 700, color: 'rgba(255,255,255,0.03)', lineHeight: 1, userSelect: 'none',
           letterSpacing: -10,
         }}>1313</div>
-        {/* Gold orb */}
         <div style={{
           position: 'absolute', bottom: -100, left: '60%',
           width: 500, height: 500, borderRadius: '50%',
           background: 'radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%)',
         }} />
 
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '140px 32px 100px', position: 'relative', zIndex: 1 }}>
-          {/* Pill badge */}
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '120px 32px 80px', position: 'relative', zIndex: 1 }}>
           <div className="animate-fade-up anim-delay-1" style={{
             display: 'inline-flex', alignItems: 'center', gap: 10,
             padding: '8px 20px', marginBottom: 32,
@@ -117,7 +113,6 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
             >View Our Services</button>
           </div>
 
-          {/* Trust row */}
           <div className="animate-fade-up anim-delay-5" style={{ marginTop: 64, display: 'flex', flexWrap: 'wrap', gap: 28 }}>
             {badges.map(b => (
               <div key={b} style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'rgba(255,255,255,0.45)', fontSize: 11, letterSpacing: '0.1em' }}>
@@ -127,7 +122,6 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
           </div>
         </div>
 
-        {/* Bottom wave */}
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
           <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block' }}>
             <path d="M0,60 C360,0 1080,0 1440,60 L1440,60 L0,60 Z" fill="var(--cream)" />
@@ -137,16 +131,16 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
 
       {/* ── STATS ── */}
       <div ref={r1.ref} style={{
-        padding: '56px 32px', background: 'white',
+        padding: '48px 32px', background: 'white',
         borderBottom: '1px solid var(--cream-mid)',
-        opacity: r1.visible ? 1 : 0, transform: r1.visible ? 'translateY(0)' : 'translateY(24px)',
-        transition: 'all 0.8s ease',
+        opacity: r1.visible ? 1 : 0, transform: r1.visible ? 'translateY(0)' : 'translateY(12px)',
+        transition: 'all 0.6s ease',
       }}>
         <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 8 }}>
           {stats.map(({ value, label }) => (
-            <div key={label} style={{ textAlign: 'center', padding: '24px 16px', borderRight: '1px solid var(--cream-mid)' }}>
-              <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 36, color: 'var(--sapphire)', fontWeight: 600, lineHeight: 1.1 }}>{value}</div>
-              <div style={{ fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-light)', marginTop: 6 }}>{label}</div>
+            <div key={label} style={{ textAlign: 'center', padding: '16px', borderRight: '1px solid var(--cream-mid)' }}>
+              <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 32, color: 'var(--sapphire)', fontWeight: 600, lineHeight: 1.1 }}>{value}</div>
+              <div style={{ fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-light)', marginTop: 6 }}>{label}</div>
             </div>
           ))}
         </div>
@@ -156,30 +150,27 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
       <section ref={servicesRef} style={{
         padding: '80px 32px', background: 'var(--cream)',
         opacity: r2.visible ? 1 : 0, transition: 'all 0.8s ease',
-        transform: r2.visible ? 'translateY(0)' : 'translateY(32px)',
+        transform: r2.visible ? 'translateY(0)' : 'translateY(24px)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <div style={{ textAlign: 'center', marginBottom: 40 }}>
             <div style={{ fontSize: 11, letterSpacing: '0.35em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 12, fontWeight: 500 }}>What We Do</div>
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 4vw, 44px)', color: 'var(--navy)', marginBottom: 16 }}>Comprehensive Financial Services</h2>
-            <div className="ornament" style={{ maxWidth: 300, margin: '0 auto' }}>
-              <span style={{ fontSize: 10, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--text-light)' }}>Click a service to learn more</span>
-            </div>
+            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--navy)', marginBottom: 16 }}>Comprehensive Financial Services</h2>
+            <p style={{ color: 'var(--text-light)', fontSize: 12, letterSpacing: '0.05em' }}>Select a service below to explore how we can support your growth</p>
           </div>
+          
           <div className="services-grid" style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', 
+            gridTemplateColumns: 'repeat(3, 1fr)', // Force 3 columns for 6 items (3x2)
             gap: 2,
-            background: 'rgba(201,168,76,0.05)',
-            boxShadow: '0 20px 50px rgba(10,22,40,0.05)'
+            background: 'rgba(201,168,76,0.02)',
           }}>
             {SERVICES.map((svc, i) => (
               <button key={svc.id} onClick={() => onServiceClick(svc)} style={{
                 background: 'white', border: 'none', cursor: 'pointer',
-                padding: '36px 32px', textAlign: 'left',
+                padding: '40px 32px', textAlign: 'left',
                 transition: 'all 0.3s ease',
                 position: 'relative', overflow: 'hidden',
-                animationDelay: `${i * 0.1}s`,
               }}
               onMouseOver={e => {
                 e.currentTarget.style.background = 'var(--navy)'
@@ -212,7 +203,6 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
                 }}>
                   Learn More <span style={{ fontSize: 16 }}>→</span>
                 </div>
-                {/* Gold bottom border on hover */}
                 <div style={{
                   position: 'absolute', bottom: 0, left: 0, right: 0, height: 3,
                   background: 'linear-gradient(90deg, var(--gold), var(--gold-light))',
@@ -220,20 +210,29 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
               </button>
             ))}
           </div>
+          {/* Fallback for mobile/tablet via CSS class in index.css */}
+          <style>{`
+            @media (max-width: 991px) {
+              .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            }
+            @media (max-width: 640px) {
+              .services-grid { grid-template-columns: 1fr !important; }
+            }
+          `}</style>
         </div>
       </section>
 
       {/* ── WHY CHOOSE US ── */}
       <section ref={r3.ref} style={{
-        padding: '96px 32px', background: 'white',
+        padding: '80px 32px', background: 'white',
         opacity: r3.visible ? 1 : 0, transition: 'all 0.8s ease',
-        transform: r3.visible ? 'translateY(0)' : 'translateY(32px)',
+        transform: r3.visible ? 'translateY(0)' : 'translateY(24px)',
       }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 80, alignItems: 'center' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: 64, alignItems: 'center' }}>
           <div>
             <div style={{ fontSize: 11, letterSpacing: '0.35em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 12, fontWeight: 500 }}>Why Choose Us</div>
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(26px, 3.5vw, 40px)', color: 'var(--navy)', marginBottom: 20 }}>The 1313 Difference</h2>
-            <p style={{ color: 'var(--text-mid)', fontSize: 15, lineHeight: 1.8, marginBottom: 36 }}>
+            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(26px, 3.5vw, 36px)', color: 'var(--navy)', marginBottom: 20 }}>The 1313 Difference</h2>
+            <p style={{ color: 'var(--text-mid)', fontSize: 15, lineHeight: 1.8, marginBottom: 32 }}>
               We don't just manage your numbers — we partner with you to deliver financial strategy that drives real outcomes. Every client receives a dedicated senior consultant.
             </p>
             {[
@@ -257,64 +256,59 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
             <button onClick={onContactOpen} className="btn-primary" style={{ marginTop: 12 }}>Book a Consultation</button>
           </div>
 
-          {/* Stats card */}
           <div style={{ position: 'relative' }}>
-            <div style={{
-              background: 'linear-gradient(135deg, var(--navy), var(--sapphire))',
-              padding: 48, position: 'relative', overflow: 'hidden',
-            }}>
-              <div style={{ position: 'absolute', top: -40, right: -40, width: 160, height: 160, borderRadius: '50%', border: '1px solid rgba(201,168,76,0.15)' }} />
-              <div style={{ position: 'absolute', top: -20, right: -20, width: 100, height: 100, borderRadius: '50%', border: '1px solid rgba(201,168,76,0.1)' }} />
-              <div style={{ textAlign: 'center', marginBottom: 36 }}>
-                <div style={{ fontFamily: 'Playfair Display, serif', color: 'var(--gold)', fontSize: 52, fontWeight: 600 }}>15+</div>
-                <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: 11, letterSpacing: '0.25em', textTransform: 'uppercase' }}>Years of Excellence</div>
+            <div style={{ background: 'linear-gradient(135deg, var(--navy), var(--sapphire))', padding: '40px 32px', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ textAlign: 'center', marginBottom: 28 }}>
+                <div style={{ fontFamily: 'Playfair Display, serif', color: 'var(--gold)', fontSize: 44, fontWeight: 600 }}>15+</div>
+                <div style={{ color: 'rgba(255,255,255,0.5)', fontSize: 10, letterSpacing: '0.25em', textTransform: 'uppercase' }}>Years of Excellence</div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 {[
-                  ['£80k+', 'Average Annual Tax Saved'],
-                  ['1,200+', 'Businesses Supported'],
-                  ['4.9/5', 'Client Satisfaction'],
-                  ['100%', 'Compliance Record'],
+                  ['£80k+', 'Tax Saved'],
+                  ['1,200+', 'Businesses'],
+                  ['4.9/5', 'Rating'],
+                  ['100%', 'Compliance'],
                 ].map(([val, desc]) => (
-                  <div key={val} style={{
-                    background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(201,168,76,0.1)',
-                    padding: '20px 16px', textAlign: 'center',
-                  }}>
-                    <div style={{ fontFamily: 'Playfair Display, serif', color: 'var(--gold-light)', fontSize: 22 }}>{val}</div>
-                    <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 10, letterSpacing: '0.1em', marginTop: 4, textTransform: 'uppercase' }}>{desc}</div>
+                  <div key={val} style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(201,168,76,0.1)', padding: '16px 12px', textAlign: 'center' }}>
+                    <div style={{ fontFamily: 'Playfair Display, serif', color: 'var(--gold-light)', fontSize: 20 }}>{val}</div>
+                    <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 9, letterSpacing: '0.1em', marginTop: 4, textTransform: 'uppercase' }}>{desc}</div>
                   </div>
                 ))}
               </div>
             </div>
-            {/* Decorative offset border */}
-            <div style={{ position: 'absolute', inset: -10, border: '1px solid rgba(201,168,76,0.15)', zIndex: -1 }} />
+            <div style={{ position: 'absolute', inset: -10, border: '1px solid rgba(201,168,76,0.1)', zIndex: -1 }} />
           </div>
         </div>
       </section>
 
       {/* ── TESTIMONIALS ── */}
       <section ref={r4.ref} style={{
-        padding: '96px 32px', background: 'var(--cream)',
+        padding: '80px 32px', background: 'var(--cream)',
         opacity: r4.visible ? 1 : 0, transition: 'all 0.8s ease',
-        transform: r4.visible ? 'translateY(0)' : 'translateY(32px)',
+        transform: r4.visible ? 'translateY(0)' : 'translateY(24px)',
       }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 64 }}>
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <div style={{ fontSize: 11, letterSpacing: '0.35em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 12, fontWeight: 500 }}>Testimonials</div>
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 4vw, 40px)', color: 'var(--navy)' }}>What Our Clients Say</h2>
+            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(28px, 4vw, 36px)', color: 'var(--navy)' }}>What Our Clients Say</h2>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 24 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }} className="testimonials-grid">
             {testimonials.map(({ name, role, quote }) => (
-              <div key={name} className="glass-card" style={{ padding: 36, position: 'relative' }}>
-                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 48, color: 'var(--gold)', opacity: 0.3, lineHeight: 1, marginBottom: 16, marginTop: -8 }}>"</div>
-                <p style={{ color: 'var(--text-mid)', fontSize: 14, lineHeight: 1.8, marginBottom: 28, fontStyle: 'italic' }}>{quote}</p>
-                <div style={{ borderTop: '1px solid rgba(201,168,76,0.2)', paddingTop: 20 }}>
+              <div key={name} className="glass-card" style={{ padding: 32, position: 'relative' }}>
+                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 44, color: 'var(--gold)', opacity: 0.2, lineHeight: 1, marginBottom: 12 }}>"</div>
+                <p style={{ color: 'var(--text-mid)', fontSize: 14, lineHeight: 1.8, marginBottom: 24, fontStyle: 'italic' }}>{quote}</p>
+                <div style={{ borderTop: '1px solid rgba(201,168,76,0.15)', paddingTop: 16 }}>
                   <div style={{ fontWeight: 500, color: 'var(--navy)', fontSize: 14 }}>{name}</div>
-                  <div style={{ color: 'var(--gold)', fontSize: 11, letterSpacing: '0.1em', marginTop: 4 }}>{role}</div>
+                  <div style={{ color: 'var(--gold)', fontSize: 11, letterSpacing: '0.05em', marginTop: 4 }}>{role}</div>
                 </div>
               </div>
             ))}
           </div>
+          <style>{`
+            @media (max-width: 991px) {
+              .testimonials-grid { grid-template-columns: 1fr !important; }
+            }
+          `}</style>
         </div>
       </section>
 
@@ -324,8 +318,8 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
         opacity: r5.visible ? 1 : 0, transition: 'all 0.8s ease',
       }}>
         <div style={{ maxWidth: 1000, margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ fontSize: 10, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: 40 }}>Regulated & Accredited</div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 32 }}>
+          <div style={{ fontSize: 10, letterSpacing: '0.3em', textTransform: 'uppercase', color: 'var(--text-light)', marginBottom: 32 }}>Regulated & Accredited</div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24 }} className="accred-grid">
             {[
               { name: 'Tax Office', desc: 'Agent Registered', icon: '🏛' },
               { name: 'ICO', desc: 'Data Protection', icon: '🛡' },
@@ -333,23 +327,27 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
               { name: 'AAT', desc: 'Accounting Technicians', icon: '🎓' },
             ].map(({ name, desc, icon }) => (
               <div key={name} style={{ 
-                textAlign: 'center', padding: '24px', 
+                textAlign: 'center', padding: '24px 16px', 
                 border: '1px solid var(--cream-mid)',
                 background: 'var(--cream)',
-                transition: 'transform 0.3s ease'
               }}>
-                <div style={{ fontSize: 24, marginBottom: 12 }}>{icon}</div>
-                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 20, color: 'var(--sapphire)', fontWeight: 600, letterSpacing: '0.1em' }}>{name}</div>
-                <div style={{ fontSize: 10, color: 'var(--text-light)', letterSpacing: '0.15em', marginTop: 4, textTransform: 'uppercase' }}>{desc}</div>
+                <div style={{ fontSize: 24, marginBottom: 10 }}>{icon}</div>
+                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 18, color: 'var(--sapphire)', fontWeight: 600, letterSpacing: '0.05em' }}>{name}</div>
+                <div style={{ fontSize: 9, color: 'var(--text-light)', letterSpacing: '0.1em', marginTop: 4, textTransform: 'uppercase' }}>{desc}</div>
               </div>
             ))}
           </div>
+          <style>{`
+            @media (max-width: 768px) {
+              .accred-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            }
+          `}</style>
         </div>
       </section>
 
       {/* ── CTA ── */}
       <section ref={r6.ref} style={{
-        padding: '96px 32px', textAlign: 'center',
+        padding: '80px 32px', textAlign: 'center',
         background: 'linear-gradient(135deg, var(--navy), var(--sapphire))',
         position: 'relative', overflow: 'hidden',
         opacity: r6.visible ? 1 : 0, transition: 'all 0.8s ease',
@@ -357,19 +355,16 @@ export default function HomePage({ onContactOpen, onServiceClick }: HomePageProp
         <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%)' }} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: 640, margin: '0 auto' }}>
           <div style={{ fontSize: 11, letterSpacing: '0.35em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 16, fontWeight: 500 }}>Get Started Today</div>
-          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(30px, 5vw, 52px)', color: 'white', marginBottom: 20 }}>
+          <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: 'clamp(30px, 5vw, 44px)', color: 'white', marginBottom: 20 }}>
             Ready to Elevate<br />
             <span style={{ color: 'var(--gold-light)', fontStyle: 'italic' }}>Your Finances?</span>
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 16, lineHeight: 1.7, marginBottom: 40 }}>
+          <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 15, lineHeight: 1.7, marginBottom: 32 }}>
             Book a complimentary consultation with one of our senior consultants. No obligations — just expert insight tailored to your situation.
           </p>
-          <button onClick={onContactOpen} className="btn-primary" style={{ fontSize: 12, padding: '16px 44px' }}>
+          <button onClick={onContactOpen} className="btn-primary" style={{ fontSize: 11, padding: '14px 40px' }}>
             Book Free Consultation →
           </button>
-          <div style={{ marginTop: 20, color: 'rgba(255,255,255,0.3)', fontSize: 11, letterSpacing: '0.1em' }}>
-            No commitment · GDPR compliant · Response within 24 hours
-          </div>
         </div>
       </section>
     </div>
