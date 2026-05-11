@@ -17,7 +17,7 @@ function useReveal() {
 
 const stats = [
   { value: '1,200+', label: 'Clients Served' },
-  { value: '£2B+', label: 'Assets Managed' },
+  { value: '£100M+', label: 'Assets Managed' },
   { value: '15+', label: 'Years of Excellence' },
   { value: '98%', label: 'Client Retention' },
 ]
@@ -31,7 +31,7 @@ const testimonials = [
 const badges = ['GDPR Compliant', 'FCA Registered', 'Making Tax Digital Ready']
 
 export default function HomePage({ onContactOpen }: HomePageProps) {
-  const r3 = useReveal()
+  const r3 = useReveal(); const rStats = useReveal()
   const r4 = useReveal(); const r5 = useReveal(); const r6 = useReveal()
 
   const scrollToWhyUs = () => {
@@ -184,6 +184,23 @@ export default function HomePage({ onContactOpen }: HomePageProps) {
           </div>
         </div>
       </section>
+
+      {/* ── STATS ── */}
+      <div ref={rStats.ref} style={{
+        padding: '48px 32px', background: 'white',
+        borderBottom: '1px solid var(--cream-mid)',
+        opacity: rStats.visible ? 1 : 0, transform: rStats.visible ? 'translateY(0)' : 'translateY(12px)',
+        transition: 'all 0.6s ease',
+      }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 8 }}>
+          {stats.map(({ value, label }) => (
+            <div key={label} style={{ textAlign: 'center', padding: '16px', borderRight: '1px solid var(--cream-mid)' }}>
+              <div style={{ fontFamily: 'Playfair Display, serif', fontSize: 32, color: 'var(--sapphire)', fontWeight: 600, lineHeight: 1.1 }}>{value}</div>
+              <div style={{ fontSize: 10, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-light)', marginTop: 6 }}>{label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* ── TESTIMONIALS ── */}
       <section ref={r4.ref} style={{
