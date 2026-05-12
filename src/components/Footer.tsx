@@ -86,6 +86,7 @@ export default function Footer({ setCurrentPage }: FooterProps) {
               <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: 13, lineHeight: 2 }}>
                 info@1313consultants.com<br />
                 +44 (0) 20 0000 1313<br />
+                +91 8572038707<br />
                 London, United Kingdom
               </p>
             </div>
