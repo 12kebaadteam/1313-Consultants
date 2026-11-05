@@ -80,7 +80,7 @@ export default function AboutPage({ onContactOpen }: AboutPageProps) {
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <p style={{ color: 'var(--text-mid)', fontSize: 15, lineHeight: 1.85 }}>
-                1313 Consultants Ltd (Company No. 11719129) was established to provide UK bookkeeping practices and growing firms with reliable, scalable back-office capacity without the friction, overhead, and delays of constant recruitment.
+                1313 Consultants Ltd was established to provide UK bookkeeping practices and growing firms with reliable, scalable back-office capacity without the friction, overhead, and delays of constant recruitment.
               </p>
               <p style={{ color: 'var(--text-mid)', fontSize: 15, lineHeight: 1.85 }}>
                 We created a dedicated practice support infrastructure where working papers are prepared to rigorous professional standards, ledgers are meticulously reconciled, and client data is protected under strict UK GDPR governance.
