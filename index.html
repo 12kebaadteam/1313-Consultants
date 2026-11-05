@@ -4,43 +4,121 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <!-- Google Fonts Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+
     <!-- SEO Meta Tags -->
-    <title>1313 Consultants | Premium Accounting Consultancy UK</title>
-    <meta name="description" content="1313 Consultants — Premier accounting consultancy in London, UK. Expert tax advisory, bookkeeping, payroll, tax office compliance, and financial planning for businesses and individuals." />
-    <meta name="keywords" content="accounting consultancy UK, tax advisory London, tax office compliance, bookkeeping services UK, payroll management, accountant London, business consultancy, VAT returns UK, self assessment, corporation tax, financial planning UK, chartered accountant London" />
+    <title>1313 Consultants | Outsourced Bookkeeping Services UK & Practice Support</title>
+    <meta name="description" content="1313 Consultants provides dedicated outsourced back-office bookkeeping and payroll support for UK bookkeepers and bookkeeping practices. Scalable capacity, white-label delivery, and senior quality control." />
+    <meta name="keywords" content="bookkeeping outsourcing UK, outsourced bookkeeping services UK, bookkeeping support for UK practices, white-label bookkeeping services, back-office outsourcing for bookkeepers, payroll outsourcing UK, outsourced payroll services, timesheet management services, invoice processing services, practice support UK" />
     <meta name="author" content="1313 Consultants" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.1313consultants.com/" />
+    <link rel="canonical" href="https://1313consultants.vercel.app/" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.1313consultants.com/" />
-    <meta property="og:title" content="1313 Consultants | Premium Accounting Consultancy UK" />
-    <meta property="og:description" content="Expert accounting consultancy services across the UK. Tax advisory, bookkeeping, payroll, and financial planning for ambitious businesses." />
-    <meta property="og:image" content="https://www.1313consultants.com/og-image.jpg" />
+    <meta property="og:url" content="https://1313consultants.vercel.app/" />
+    <meta property="og:title" content="1313 Consultants | Outsourced Bookkeeping Services UK & Practice Support" />
+    <meta property="og:description" content="Dedicated back-office bookkeeping, payroll, and ledger management support for UK bookkeepers and practices." />
+    <meta property="og:image" content="https://1313consultants.vercel.app/og-image.jpg" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="1313 Consultants | Accounting Consultancy UK" />
-    <meta name="twitter:description" content="Premium accounting consultancy services across the United Kingdom." />
+    <meta name="twitter:title" content="1313 Consultants | Outsourced Bookkeeping Services UK" />
+    <meta name="twitter:description" content="Outsourced back-office bookkeeping and payroll support for UK bookkeepers." />
+    <meta name="twitter:image" content="https://1313consultants.vercel.app/og-image.jpg" />
 
-    <!-- Structured Data -->
+    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "AccountingService",
-      "name": "1313 Consultants",
-      "url": "https://www.1313consultants.com",
-      "description": "Premium accounting consultancy firm offering tax advisory, bookkeeping, payroll and financial planning services across the UK",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "London",
-        "addressCountry": "GB"
-      },
-      "telephone": "+44-20-0000-1313",
-      "email": "info@1313consultants.com",
-      "openingHours": "Mo-Fr 09:00-17:30",
-      "areaServed": "GB"
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://1313consultants.vercel.app/#organization",
+          "name": "1313 Consultants",
+          "url": "https://1313consultants.vercel.app",
+          "logo": "https://1313consultants.vercel.app/logo.png",
+          "email": "info@1313consultants.com",
+          "description": "Specialist provider of outsourced back-office bookkeeping, payroll, timesheet management, and compliance support for UK bookkeepers and practices.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "London",
+            "addressCountry": "GB"
+          },
+          "areaServed": "GB"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://1313consultants.vercel.app/#website",
+          "url": "https://1313consultants.vercel.app",
+          "name": "1313 Consultants",
+          "publisher": {
+            "@id": "https://1313consultants.vercel.app/#organization"
+          }
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://1313consultants.vercel.app/#service",
+          "name": "1313 Consultants Outsourced Practice Solutions",
+          "provider": {
+            "@id": "https://1313consultants.vercel.app/#organization"
+          },
+          "serviceType": "Outsourced Bookkeeping & Back-Office Support",
+          "areaServed": {
+            "@type": "Country",
+            "name": "United Kingdom"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Bookkeeping Practice Solutions",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Bookkeeping & Management Accounts",
+                  "description": "Routine transaction coding, bank reconciliations, and trial balance preparation for UK bookkeepers."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Payroll Outsourcing Services",
+                  "description": "Complete PAYE, RTI filings, and auto-enrolment pension processing."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Timesheet Management Services",
+                  "description": "Contractor hours collation, attendance auditing, and billable hour verification."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Invoice Processing & Billing Services",
+                  "description": "Accounts payable and receivable management, 3-way matching, and sales invoicing."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Tax Office Compliance Support",
+                  "description": "VAT return preparation and Making Tax Digital support for bookkeeping practices."
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
     </script>
 
