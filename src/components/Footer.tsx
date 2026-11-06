@@ -150,7 +150,7 @@ export default function Footer({ setCurrentPage, services = [], onSelectService 
         {/* Bottom copyright line */}
         <div style={{ borderTop: '1px solid rgba(201,168,76,0.15)', paddingTop: 24, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 11, letterSpacing: '0.05em' }}>
-            © {year} 1313 Consultants Ltd. Registered in England & Wales (No. 11719129). All rights reserved.
+            © {year} 1313 Consultants. All rights reserved.
           </p>
           <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: 11, fontStyle: 'italic' }}>
             Outsourced Back-Office Support for UK Bookkeepers

@@ -178,7 +178,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
                       value={form.company}
                       onChange={e => setForm({ ...form, company: e.target.value })}
                       style={inputStyle}
-                      placeholder="e.g. Vance Bookkeeping Ltd"
+                      placeholder="e.g. Vance Bookkeeping"
                       onFocus={e => e.target.style.borderColor = 'var(--gold)'}
                       onBlur={e => e.target.style.borderColor = 'rgba(201,168,76,0.25)'}
                     />

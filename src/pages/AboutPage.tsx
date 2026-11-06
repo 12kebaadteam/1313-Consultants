@@ -80,7 +80,7 @@ export default function AboutPage({ onContactOpen }: AboutPageProps) {
             </h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               <p style={{ color: 'var(--text-mid)', fontSize: 15, lineHeight: 1.85 }}>
-                1313 Consultants Ltd was established to provide UK bookkeeping practices and growing firms with reliable, scalable back-office capacity without the friction, overhead, and delays of constant recruitment.
+                1313 Consultants was established to provide UK bookkeeping practices and growing firms with reliable, scalable back-office capacity without the friction, overhead, and delays of constant recruitment.
               </p>
               <p style={{ color: 'var(--text-mid)', fontSize: 15, lineHeight: 1.85 }}>
                 We created a dedicated practice support infrastructure where working papers are prepared to rigorous professional standards, ledgers are meticulously reconciled, and client data is protected under strict UK GDPR governance.
@@ -92,7 +92,7 @@ export default function AboutPage({ onContactOpen }: AboutPageProps) {
           </div>
           <div className="stack-on-mobile">
             {[
-              { year: '2018', event: 'UK Incorporation', desc: '1313 Consultants Ltd established in England & Wales to deliver dedicated administrative and back-office support.' },
+              { year: '2018', event: 'Foundation', desc: '1313 Consultants established to deliver dedicated administrative and back-office support.' },
               { year: '2020', event: 'Practice Support Specialisation', desc: 'Expansion into structured white-label back-office services tailored specifically for UK bookkeepers.' },
               { year: '2023', event: 'Cloud Platform Standardization', desc: 'Deployment of standardised, secure workflows across Xero, QuickBooks Online, and Sage.' },
               { year: 'Present', event: 'Dedicated Practice Partner', desc: 'Delivering consistent back-office capacity, multi-tier review, and SLA-backed turnaround across the UK.' },
