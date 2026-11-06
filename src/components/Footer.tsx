@@ -157,6 +157,22 @@ export default function Footer({ setCurrentPage, services = [], onSelectService 
           </p>
         </div>
       </div>
+
+      {/* Developed by line */}
+      <div style={{
+        borderTop: '1px solid rgba(255,255,255,0.08)',
+        padding: '14px 0',
+        textAlign: 'center',
+      }}>
+        <p style={{
+          color: 'rgba(255,255,255,0.3)',
+          fontSize: 11,
+          letterSpacing: '0.05em',
+          margin: 0,
+        }}>
+          Developed by MyPaperTrail Co.
+        </p>
+      </div>
     </footer>
   )
 }
